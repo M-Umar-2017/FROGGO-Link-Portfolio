@@ -1,6 +1,6 @@
-/** Velvet Webring design: a centered old-web profile terminal with tactile maroon controls and candid personal copy. */
-import { useState } from "react";
-import { ArrowUpRight, Check, Copy } from "lucide-react";
+/** Velvet Webring design: a centered old-web profile terminal with tactile maroon controls, optional ambient music, and candid personal copy. */
+import { useRef, useState } from "react";
+import { ArrowUpRight, Check, Copy, Music2, Pause, Play } from "lucide-react";
 
 const profileLinks = [
   { label: "GitHub", tag: "code archive", href: "https://github.com/M-Umar-2017" },
@@ -14,17 +14,36 @@ const profileLinks = [
   { label: "Uiverse", tag: "UI work", href: "https://uiverse.io/profile/M-Umar-2017" },
   { label: "Pinterest", tag: "pins", href: "https://www.pinterest.com/The_Guy_2017/" },
   { label: "CrazyGames", tag: "player page", href: "https://www.crazygames.com/u/FlyinCocktail.0349" },
-  { label: "Bloxd.io", tag: "play", href: "https://bloxd.io/" },
+  { label: "BloxdHub", tag: "Bloxd.io profile", href: "https://bloxdhub.com/@MADEC" },
   { label: "Itch.io", tag: "games", href: "https://the-guy-of-games-2017.itch.io/" },
 ];
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const copyDiscordId = async () => {
     await navigator.clipboard.writeText("unknownbro_11033");
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1800);
+  };
+
+  const toggleMusic = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isMusicPlaying) {
+      audio.pause();
+      return;
+    }
+
+    audio.volume = 0.28;
+    try {
+      await audio.play();
+    } catch {
+      setIsMusicPlaying(false);
+    }
   };
 
   return (
@@ -41,6 +60,14 @@ export default function Home() {
       <main className="profile-shell">
         <div className="window-shadow" aria-hidden="true" />
         <article className="profile-window">
+          <audio
+            ref={audioRef}
+            loop
+            preload="metadata"
+            src="/manus-storage/velvet-webring-theme_20dab064.mp3"
+            onPlay={() => setIsMusicPlaying(true)}
+            onPause={() => setIsMusicPlaying(false)}
+          />
           <header className="window-titlebar">
             <span className="titlebar-name">
               <img
@@ -57,6 +84,14 @@ export default function Home() {
               <i />
             </span>
           </header>
+
+          <div className="music-strip">
+            <span className="music-strip-label"><Music2 size={13} aria-hidden="true" /> ambient theme / optional</span>
+            <button className="music-control" type="button" onClick={toggleMusic} aria-pressed={isMusicPlaying}>
+              {isMusicPlaying ? <Pause size={13} aria-hidden="true" /> : <Play size={13} aria-hidden="true" />}
+              <span>{isMusicPlaying ? "pause music" : "play music"}</span>
+            </button>
+          </div>
 
           <section className="identity-block" aria-labelledby="profile-title">
             <div className="micro-label micro-label-left">personal web / 2017</div>
