@@ -1,6 +1,9 @@
-/** Velvet Webring design: a centered old-web profile terminal with tactile maroon controls, optional ambient music, and candid personal copy. */
+/** Velvet Webring design: a centered old-web profile terminal with tactile maroon controls, optional ambient music, candid personal copy, and base-aware repository assets. */
 import { useRef, useState } from "react";
 import { ArrowUpRight, Check, Copy, Music2, Pause, Play } from "lucide-react";
+
+const assetBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+const assetPath = (fileName: string) => `${assetBase}/assets/${fileName}`;
 
 const profileLinks = [
   { label: "GitHub", tag: "code archive", href: "https://github.com/M-Umar-2017" },
@@ -52,7 +55,7 @@ export default function Home() {
       <div className="desktop-spark desktop-spark-two" aria-hidden="true" />
       <img
         className="corner-sticker"
-        src="/manus-storage/webring-corner-sticker_3608a254.png"
+        src={assetPath("webring-corner-sticker.png")}
         alt=""
         aria-hidden="true"
       />
@@ -64,7 +67,7 @@ export default function Home() {
             ref={audioRef}
             loop
             preload="metadata"
-            src="/manus-storage/velvet-webring-theme_20dab064.mp3"
+            src={assetPath("velvet-webring-theme.mp3")}
             onPlay={() => setIsMusicPlaying(true)}
             onPause={() => setIsMusicPlaying(false)}
           />
@@ -72,7 +75,7 @@ export default function Home() {
             <span className="titlebar-name">
               <img
                 className="titlebar-mark"
-                src="/manus-storage/webring-logo-mark_7e9db7ca.png"
+                src={assetPath("webring-logo-mark.png")}
                 alt=""
                 aria-hidden="true"
               />
@@ -98,7 +101,7 @@ export default function Home() {
             <div className="avatar-console">
               <span className="avatar-tab">profile.pfp</span>
               <div className="avatar-ring">
-                <img src="/manus-storage/profile-avatar_bd94af3f.jpg" alt="MADEC2017 profile avatar" />
+                <img src={assetPath("profile-avatar.jpg")} alt="MADEC2017 profile avatar" />
               </div>
             </div>
             <div className="identity-copy">
@@ -108,7 +111,7 @@ export default function Home() {
             </div>
             <img
               className="terminal-orb"
-              src="/manus-storage/pink-terminal-orb_f392ac72.png"
+              src={assetPath("pink-terminal-orb.png")}
               alt=""
               aria-hidden="true"
             />
