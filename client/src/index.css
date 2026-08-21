@@ -1,13 +1,12 @@
+/** Velvet Webring design: oxblood desktop texture, dusty-pink beveled windows, and compact early-web typography. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Special+Elite&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "IBM Plex Mono", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -27,151 +26,601 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --radius: 0px;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --background: #210813;
+  --foreground: #ffecdc;
+  --card: #4d1530;
+  --card-foreground: #ffecdc;
+  --popover: #4d1530;
+  --popover-foreground: #ffecdc;
+  --primary: #d66a8c;
+  --primary-foreground: #2b0718;
+  --secondary: #8c3859;
+  --secondary-foreground: #ffecdc;
+  --muted: #6a2241;
+  --muted-foreground: #dfa0b3;
+  --accent: #e387a5;
+  --accent-foreground: #2b0718;
+  --destructive: #e98b8e;
+  --destructive-foreground: #2b0718;
+  --border: #d66a8c;
+  --input: #6a2241;
+  --ring: #ffd0de;
 }
 
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+* {
+  box-sizing: border-box;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+html {
+  min-width: 320px;
+  background: #210813;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--foreground);
+  background: #210813;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #ffe0e9;
+  outline-offset: 3px;
+}
+
+.profile-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 34px 18px 72px;
+  background-color: #210813;
+  background-image: linear-gradient(rgba(33, 8, 19, 0.46), rgba(33, 8, 19, 0.68)), url("/manus-storage/maroon-desktop-wallpaper_0cb15b2c.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.profile-page::before,
+.profile-page::after {
+  position: absolute;
+  z-index: -1;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(236, 143, 169, 0.2);
+  content: "";
+  pointer-events: none;
+}
+
+.profile-page::before {
+  top: 12%;
+  left: max(-70px, calc(50% - 540px));
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.profile-page::after {
+  right: max(-70px, calc(50% - 540px));
+  bottom: 10%;
+  border-top: 0;
+  border-right: 0;
+}
+
+.desktop-spark {
+  position: absolute;
+  z-index: -1;
+  width: 8px;
+  height: 8px;
+  background: #e387a5;
+  box-shadow: 0 0 0 3px rgba(227, 135, 165, 0.16), 0 0 24px rgba(227, 135, 165, 0.48);
+}
+
+.desktop-spark-one {
+  top: 19%;
+  left: 12%;
+}
+
+.desktop-spark-two {
+  right: 14%;
+  bottom: 20%;
+}
+
+.corner-sticker {
+  position: absolute;
+  right: max(12px, calc(50% - 590px));
+  bottom: 14px;
+  z-index: 0;
+  width: clamp(68px, 10vw, 122px);
+  opacity: 0.86;
+  transform: rotate(7deg);
+  pointer-events: none;
+}
+
+.profile-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 610px);
+  margin: 0 auto;
+}
+
+.window-shadow {
+  position: absolute;
+  top: 9px;
+  right: -9px;
+  bottom: -9px;
+  left: 9px;
+  background: #100309;
+  border: 2px solid #100309;
+  box-shadow: 12px 12px 0 rgba(5, 1, 3, 0.55);
+}
+
+.profile-window {
+  position: relative;
+  overflow: hidden;
+  background: #551832;
+  border: 2px solid #f6a8bd;
+  box-shadow: inset 2px 2px 0 #ffd4df, inset -2px -2px 0 #210813;
+  animation: window-arrive 420ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.window-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 7px 10px 7px 12px;
+  color: #ffe8ef;
+  background: linear-gradient(90deg, #7c284a 0%, #b94f75 56%, #7c284a 100%);
+  border-bottom: 2px solid #220713;
+  box-shadow: inset 0 1px 0 rgba(255, 227, 236, 0.86), inset 0 -1px 0 rgba(75, 10, 35, 0.5);
+}
+
+.titlebar-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.titlebar-mark {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.window-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.window-controls i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #e88eaa;
+  border: 1px solid #4c1029;
+  box-shadow: inset 1px 1px 0 #ffd9e4, inset -1px -1px 0 #8b294d;
+}
+
+.identity-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 158px minmax(0, 1fr) 92px;
+  align-items: center;
+  gap: 18px;
+  min-height: 233px;
+  padding: 36px 30px 28px;
+  background: linear-gradient(130deg, #4f1630 0%, #5f193a 54%, #49132c 100%);
+  border-bottom: 2px solid #250916;
+}
+
+.identity-block::before {
+  position: absolute;
+  top: 10px;
+  right: 11px;
+  left: 11px;
+  height: 1px;
+  background: rgba(253, 193, 210, 0.38);
+  content: "";
+}
+
+.micro-label {
+  position: absolute;
+  top: 17px;
+  color: #e8a6b9;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.micro-label-left {
+  left: 30px;
+}
+
+.avatar-console {
+  position: relative;
+  align-self: end;
+  padding: 7px;
+  background: #250916;
+  border: 1px solid #f2a2b8;
+  box-shadow: inset 1px 1px 0 #8b3655, 4px 4px 0 #260914;
+}
+
+.avatar-tab {
+  position: absolute;
+  top: -22px;
+  left: -1px;
+  padding: 4px 7px 3px;
+  color: #2a0716;
+  background: #e49ab0;
+  border: 1px solid #f9c8d6;
+  border-bottom: 0;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.avatar-ring {
+  overflow: hidden;
+  aspect-ratio: 1;
+  border: 2px solid #e7789a;
+  box-shadow: inset 2px 2px 0 #14040b, inset -2px -2px 0 #d47695;
+}
+
+.avatar-ring img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.identity-copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #eba8bb;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.identity-copy h1 {
+  margin: 0;
+  color: #fff0e9;
+  font-family: "Special Elite", serif;
+  font-size: clamp(28px, 4vw, 39px);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  text-shadow: 2px 2px 0 #3a0c21;
+}
+
+.profile-tagline {
+  max-width: 270px;
+  margin: 12px 0 0;
+  color: #f7c9d4;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.terminal-orb {
+  align-self: start;
+  width: 82px;
+  margin-top: 19px;
+  opacity: 0.96;
+  transform: rotate(-7deg);
+}
+
+.about-panel {
+  position: relative;
+  padding: 25px 30px 24px;
+  background: #3c1025;
+  border-top: 1px solid #8e3456;
+  border-bottom: 1px solid #8e3456;
+}
+
+.panel-label {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  padding: 3px 8px;
+  color: #3a0d20;
+  background: #f1a0b7;
+  border: 1px solid #ffd7e2;
+  font-family: "Special Elite", serif;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+}
+
+.about-panel p {
+  max-width: 490px;
+  margin: 0 0 16px;
+  color: #f8d4dc;
+  font-size: 12px;
+  line-height: 1.72;
+}
+
+.discord-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 7px 9px;
+  color: #ffe4ec;
+  background: #611d3b;
+  border: 1px solid #e384a2;
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 #9d4968, inset -1px -1px 0 #310817;
+  font-family: inherit;
+  font-size: 10px;
+  transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1), background-color 140ms ease;
+}
+
+.discord-chip:hover {
+  background: #762544;
+  transform: translateY(-1px);
+}
+
+.discord-chip:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 1px 1px 0 #310817, inset -1px -1px 0 #9d4968;
+}
+
+.discord-chip strong {
+  color: #fff2ee;
+  font-weight: 600;
+}
+
+.discord-indicator {
+  width: 7px;
+  height: 7px;
+  background: #f0a4b8;
+  border: 1px solid #ffdce6;
+  box-shadow: 0 0 0 2px #3b0e24;
+}
+
+.copy-note {
+  color: #e8a8bb;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.links-panel {
+  padding: 26px 30px 30px;
+  background: #4a132d;
+}
+
+.directory-heading {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+}
+
+.directory-heading h2 {
+  margin: 0;
+  color: #f6c5d1;
+  font-family: "Special Elite", serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  text-align: center;
+}
+
+.directory-rule {
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #bd5478 0 5px, transparent 5px 9px);
+  border-top: 1px solid #250815;
+  border-bottom: 1px solid #87405a;
+}
+
+.link-directory {
+  display: grid;
+  gap: 7px;
+}
+
+.profile-link {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto 20px;
+  align-items: center;
+  gap: 8px;
+  min-height: 47px;
+  padding: 8px 11px 8px 0;
+  color: #ffe4e9;
+  text-decoration: none;
+  background: #681e3f;
+  border: 1px solid #c96383;
+  box-shadow: inset 1px 1px 0 #a64d6b, inset -2px -2px 0 #3c0c23, 3px 3px 0 #280915;
+  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1), background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.profile-link:hover {
+  color: #fff8ef;
+  background: #83304f;
+  box-shadow: inset 1px 1px 0 #e087a4, inset -2px -2px 0 #3c0c23, 5px 5px 0 #1b050d;
+  transform: translate(-2px, -2px);
+}
+
+.profile-link:active {
+  box-shadow: inset 2px 2px 0 #3c0c23, inset -1px -1px 0 #a64d6b;
+  transform: translate(2px, 2px) scale(0.99);
+}
+
+.link-index {
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  color: #3a0b20;
+  background: #e58ca7;
+  border-right: 1px solid #3f0e24;
+  font-family: "Special Elite", serif;
+  font-size: 11px;
+}
+
+.link-name {
+  overflow: hidden;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-tag {
+  color: #efb1c3;
+  font-size: 9px;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.link-arrow {
+  color: #f3b4c6;
+  transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.profile-link:hover .link-arrow {
+  color: #fff1ee;
+  transform: translate(2px, -2px);
+}
+
+.profile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 43px;
+  color: #d89ab0;
+  background: #2a0918;
+  border-top: 2px solid #18030b;
+  box-shadow: inset 0 1px 0 rgba(241, 132, 165, 0.22);
+  font-size: 8px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.footer-star {
+  color: #e384a2;
+  font-size: 11px;
+}
+
+@keyframes window-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-  button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
-@layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
+@media (max-width: 560px) {
+  .profile-page {
+    padding: 18px 11px 54px;
   }
 
-  .flex {
-    min-height: 0;
-    min-width: 0;
+  .window-shadow {
+    top: 6px;
+    right: -6px;
+    bottom: -6px;
+    left: 6px;
   }
 
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
+  .identity-block {
+    grid-template-columns: 106px minmax(0, 1fr) 48px;
+    gap: 13px;
+    min-height: 201px;
+    padding: 34px 17px 20px;
   }
 
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
+  .micro-label-left {
+    left: 17px;
+  }
+
+  .terminal-orb {
+    width: 51px;
+    margin-top: 31px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+  }
+
+  .identity-copy h1 {
+    font-size: 27px;
+  }
+
+  .profile-tagline {
+    font-size: 9px;
+  }
+
+  .about-panel,
+  .links-panel {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .panel-label {
+    left: 17px;
+  }
+
+  .about-panel p {
+    font-size: 10px;
+  }
+
+  .discord-chip {
+    max-width: 100%;
+    font-size: 9px;
+  }
+
+  .directory-heading h2 {
+    font-size: 12px;
+  }
+
+  .profile-link {
+    grid-template-columns: 29px minmax(0, 1fr) 17px;
+    gap: 8px;
+  }
+
+  .link-tag {
+    display: none;
+  }
+
+  .link-name {
+    font-size: 11px;
+  }
+
+  .corner-sticker {
+    width: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-window,
+  .profile-link,
+  .link-arrow,
+  .discord-chip {
+    animation: none;
+    transition: none;
   }
 }
