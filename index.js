@@ -1,5 +1,6 @@
 const links = document.querySelectorAll('.link-tile');
 const status = document.querySelector('.window-status');
+const timeDisplay = document.getElementById('time-display');
 
 links.forEach((link) => {
   link.addEventListener('pointerdown', () => {
@@ -17,6 +18,21 @@ links.forEach((link) => {
     }
   });
 });
+
+const updateTime = () => {
+  if (!timeDisplay) return;
+  const now = new Date();
+  const time = now.toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  });
+  timeDisplay.textContent = `${time} // ${now.getFullYear()}`;
+};
+
+updateTime();
+window.setInterval(updateTime, 1000);
 
 window.setInterval(() => {
   if (!status) return;
