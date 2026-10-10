@@ -10,5 +10,11 @@ const updateTime = () => {
   }).format(new Date());
 };
 
+document.querySelectorAll('.platform-icon img').forEach((icon) => {
+  icon.addEventListener('error', () => {
+    icon.hidden = true;
+  }, { once: true });
+});
+
 updateTime();
 window.setInterval(updateTime, 1000);
