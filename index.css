@@ -72,7 +72,9 @@ h2 { font-size: clamp(1.75rem, 4.8vw, 2.45rem); }
 .link-card { display: grid; min-width: 0; min-height: 4.2rem; grid-template-columns: 2.5rem minmax(0, 1fr) 1rem; align-items: center; gap: 0.8rem; padding: 0.65rem 0.85rem; border: 1px solid rgba(95, 108, 77, 0.1); border-radius: 1.15rem; color: var(--ink); background: rgba(251, 252, 247, 0.92); text-decoration: none; box-shadow: 0 4px 14px rgba(65, 76, 52, 0.035); transition: transform 160ms var(--ease), border-color 160ms var(--ease), background 160ms var(--ease), box-shadow 160ms var(--ease); }
 .link-card:hover, .link-card:focus-visible { transform: translateY(-2px); border-color: rgba(95, 108, 77, 0.3); background: #fff; box-shadow: 0 9px 20px rgba(65, 76, 52, 0.09); outline: none; }
 .platform-icon { position: relative; display: grid; width: 2.5rem; aspect-ratio: 1; place-items: center; overflow: hidden; border-radius: 0.9rem; color: var(--sage); background: var(--surface-mint); font: 700 0.8rem 'Manrope', sans-serif; }
-.platform-icon img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0.38rem; border-radius: inherit; background: var(--surface-soft); object-fit: contain; }
+.platform-icon .favicon-fallback { display: none; }
+.platform-icon .favicon-fallback.is-visible { display: grid; place-items: center; }
+.platform-icon img { display: block; width: 1.5rem; height: 1.5rem; object-fit: contain; }
 .platform-icon img[hidden] { display: none; }
 .platform-name { min-width: 0; overflow: hidden; font-size: 0.83rem; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
 .external-icon { color: var(--muted-soft); font-size: 0.95rem; transition: color 160ms var(--ease), transform 160ms var(--ease); }
