@@ -75,6 +75,7 @@ h2 { font-size: clamp(1.75rem, 4.8vw, 2.45rem); }
 .platform-icon .favicon-fallback { display: none; }
 .platform-icon .favicon-fallback.is-visible { display: grid; place-items: center; }
 .platform-icon img { display: block; width: 1.5rem; height: 1.5rem; object-fit: contain; }
+.platform-icon img[src$="pixilart.png"], .platform-icon img[src$="fandom.png"] { width: 1.75rem; height: 1.75rem; }
 .platform-icon img[hidden] { display: none; }
 .platform-name { min-width: 0; overflow: hidden; font-size: 0.83rem; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
 .external-icon { color: var(--muted-soft); font-size: 0.95rem; transition: color 160ms var(--ease), transform 160ms var(--ease); }
