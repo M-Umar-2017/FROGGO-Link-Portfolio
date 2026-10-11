@@ -24,17 +24,7 @@ body { min-width: 320px; min-height: 100vh; margin: 0; color: var(--ink); backgr
 .skip-link { position: fixed; z-index: 10; top: 0.75rem; left: 0.75rem; padding: 0.7rem 1rem; transform: translateY(-160%); border-radius: 999px; color: var(--ink); background: var(--lime); font-weight: 700; text-decoration: none; }
 .skip-link:focus { transform: translateY(0); }
 .page-shell { width: min(100% - 2rem, 920px); margin: 0 auto; padding: 2rem 0 1.5rem; }
-
-.topbar { display: flex; min-height: 5.1rem; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 1.4rem; border-radius: 1.65rem; color: var(--surface); background: var(--sage); box-shadow: 0 12px 30px rgba(65, 76, 52, 0.12); }
-.brand { display: inline-flex; align-items: center; gap: 0.75rem; color: inherit; text-decoration: none; }
-.brand-mark { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border: 1px solid rgba(245, 255, 159, 0.36); border-radius: 1rem; color: var(--sage); background: var(--lime); font: 800 1.15rem/1 'Manrope', sans-serif; }
-.brand-name { font: 800 1rem/1 'Manrope', sans-serif; letter-spacing: 0.08em; }
-.brand-name span { color: var(--lime); }
-.topbar-meta { display: grid; justify-items: end; gap: 0.18rem; }
-.topbar-caption { color: rgba(255, 255, 255, 0.66); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.12em; }
-.topbar-note { color: var(--lime); font-size: 0.7rem; font-variant-numeric: tabular-nums; letter-spacing: 0.06em; }
-
-.quick-nav { display: flex; justify-content: flex-end; gap: 0.55rem; margin: 0.8rem 0 1.35rem; }
+.quick-nav { display: flex; justify-content: flex-end; gap: 0.55rem; margin: 0 0 1.35rem; }
 .quick-link { display: inline-flex; min-height: 2.55rem; align-items: center; gap: 0.52rem; padding: 0.45rem 0.85rem; border: 1px solid rgba(95, 108, 77, 0.12); border-radius: 999px; color: var(--sage); background: rgba(251, 252, 247, 0.74); font-size: 0.74rem; font-weight: 600; text-decoration: none; transition: background 160ms var(--ease), transform 160ms var(--ease), border-color 160ms var(--ease); }
 .quick-link:hover, .quick-link:focus-visible { transform: translateY(-1px); border-color: rgba(95, 108, 77, 0.3); background: var(--surface); outline: none; }
 .quick-link.is-current { border-color: transparent; color: var(--sage); background: var(--mint); }
@@ -90,9 +80,7 @@ h2 { font-size: clamp(1.75rem, 4.8vw, 2.45rem); }
 
 @media (max-width: 700px) {
   .page-shell { width: min(100% - 1.3rem, 560px); padding-top: 0.75rem; }
-  .topbar { min-height: 4.5rem; padding: 0.6rem 0.9rem; border-radius: 1.35rem; }
-  .topbar-caption { font-size: 0.49rem; }
-  .quick-nav { margin-top: 0.6rem; }
+  .quick-nav { margin-top: 0; }
   .profile-card { grid-template-columns: 1fr; gap: 1.35rem; padding: 1.7rem 1.3rem 1.4rem; border-radius: 1.65rem; text-align: center; }
   .profile-card::before { top: auto; right: 50%; bottom: -12rem; transform: translateX(50%); }
   .profile-copy .eyebrow { margin-bottom: 0.55rem; }
@@ -110,7 +98,6 @@ h2 { font-size: clamp(1.75rem, 4.8vw, 2.45rem); }
   .link-card { min-height: 4rem; }
 }
 @media (max-width: 380px) {
-  .topbar-caption { display: none; }
   .link-count { padding: 0.45rem 0.65rem; }
   .footer { flex-wrap: wrap; row-gap: 0.35rem; }
   .footer-note { order: 3; width: 100%; }
